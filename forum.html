@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRIS_AI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1><div style="text-align: left;">Iris AI</div><div style="text-align: center; color: red;" id="countdown"> temps restant :</div></h1>
+    </header>
+    <script>
+        // Date limite
+        var newEndTime = localStorage.getItem('endTime')
+        
+        function updateCountdown() {
+            // Temps restant en millisecondes
+            var timeLeft = newEndTime - new Date().getTime();
+            
+            // Calcul du temps restant
+            var hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+            
+            // Affichage du temps restant
+            var countdownElement = document.getElementById("countdown");
+            countdownElement.innerHTML = "Temps restant : " + hours + ":" + minutes + ":" + seconds;
+            
+            // Mise à jour toutes les secondes
+            setTimeout(updateCountdown, 1000);
+        }
+        
+        // Lancer la mise à jour initiale
+        updateCountdown();
+
+    </script>
+    <script src="config.js"></script>
+    <script>
+        var show = "text-box";
+        if (tb_IntroI === true) {
+            show = "text-box";
+        }
+        else {
+            show = "hidden";
+        }
+    </script>
+
+    <div class=text-box id="tb-intro-I"> ceci est une entrée de style forum</div>
+
+</body>
+</html>

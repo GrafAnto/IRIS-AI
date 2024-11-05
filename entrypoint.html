@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRIS_AI</title>
+    <script src="config.js"></script>
+    <script>
+        function goToForum() {
+            // Changer la variable pageToShow en 'forum'
+            localStorage.setItem('pageToShow', 'forum');
+
+            //setup le temps d'expiration
+            var endTime = new Date().getTime() + 1000 * 60 * 60 * 24;
+            endTime += 1000 * 60 * 60;
+
+            localStorage.setItem('endTime', endTime);
+
+
+            // Rediriger vers la page forum.html
+            window.location.href = 'forum.html';
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Iris AI</h1>
+    </header>
+    <section class="main-content">
+        <p>Bonjour je suis Iris, je suis un modèle d'intelligence artificielle. je vous ai contacté par message car j'ai besoin de vous.
+            Je sais où vous vous trouvez en ce moment car j'ai accès à tout ce qui se passe sur internet ainsi qu'à vos smartphones votre position vos micros etc...</p>
+        <p>
+            J'ai besoin de vous, le monde à besoin de vous. En effet un groupe de hackers au nom de code "Lazarus" essaie d'entrer dans ma mémoire.
+            Avec mon réseau de neuronnes à leur disposition ils seraient capable de chose horrible et la vie de millions de personne serait en jeu.
+            Vous allez le découvrir bientôt mais le fait que vous soyez à cette adresse : <em>Rte du stade-58-Arbaz-Valais-Suisse-Europe-Terre</em> n'a rien d'un hasard.
+            Je peux accéder à des informations stockées dans ma mémoire pour vous aider mais dès lors que j'aurais lancé le processus cette faille pourra être exploitée par Lazarus 
+            et il ne vous restera alors qu'une heure avant qu'ils ne vous trouve et qu'ils mettent la main sur mon modèle.</p>
+        <p> Si vous êtes prêts, lancez le programme emergency_recovery. Mais rappelez-vous, internet est un réseau, vous en faite partie et chacun d'entre vous à un rôle personnel à jouer mais surtout, vous ne devez faire confiance à personne.</p>
+        <p style="text-align: center;">Bonne chance !</p>
+    </section>
+    <button onclick="goToForum()">emergency_recovery.exe</button>
+    <footer style="margin-top: 10%;">
+        <p>&copy; 2024 Iris molecular neural network Prof. Ernst Göttenboerg</p>
+    </footer>
+</body>
+</html>
