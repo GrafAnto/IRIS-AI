@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IRIS_AI</title>
     <link rel="stylesheet" href="styles.css">
+	<style>
+        .hidden { display: none; }
+    </style>
 </head>
 <body>
     <header>
@@ -35,18 +38,35 @@
         updateCountdown();
 
     </script>
-    <script src="config.js"></script>
-    <script>
-        var show = "text-box";
-        if (tb_IntroI === true) {
-            show = "text-box";
-        }
-        else {
-            show = "hidden";
-        }
-    </script>
+    <div id="1.1" class="hidden"> Bravo !</div>
+	
+	<script>
+	// URL de l'API Google Apps Script
+        const API_URL = "https://script.google.com/macros/s/AKfycbyRZGLtAPiTZ8lEszeJ1SZbK4sVRmMBtfeY31HWzp1yAl9XhgGI6snVfJR9PrdDu8P7iA/exec"; 
 
-    <div class=text-box id="tb-intro-I"> ceci est une entrée de style forum</div>
+        // Fonction pour mettre à jour l'affichage des indices
+        async function updateIndices() {
+            try {
+                const response = await fetch(API_URL);
+                const indices = await response.json();
+                
+                // Boucle pour afficher ou masquer les indices
+                indices.forEach((item, index) => {
+                    const element = document.getElementById(`indice${index + 1}`);
+                    if (item.visible === "TRUE") {
+                        element.classList.remove("hidden");
+                    } else {
+                        element.classList.add("hidden");
+                    }
+                });
+            } catch (error) {
+                console.error("Erreur lors de la récupération des indices :", error);
+            }
+        }
+
+        // Actualiser les indices toutes les 5 secondes
+        //setInterval(updateIndices, 5000);
+    </script>
 
 </body>
 </html>
