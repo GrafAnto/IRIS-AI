@@ -13,6 +13,10 @@
     <header>
         <h1><div style="text-align: left;">Iris AI</div><div style="text-align: center; color: red;" id="countdown"> temps restant :</div></h1>
     </header>
+	
+	<div id="1.1" class="hidden"> 
+		<p>Bravo!</p>
+	</div>
     <script>
         // Date limite
         var newEndTime = localStorage.getItem('endTime')
@@ -37,9 +41,7 @@
         // Lancer la mise à jour initiale
         updateCountdown();
 
-    </script>
-    <div id="1.1" class="hidden"> Bravo !</div>
-	
+    </script>	
 	<script>
 	// URL de l'API Google Apps Script
         const API_URL = "https://script.google.com/macros/s/AKfycbyRZGLtAPiTZ8lEszeJ1SZbK4sVRmMBtfeY31HWzp1yAl9XhgGI6snVfJR9PrdDu8P7iA/exec"; 
