@@ -14,7 +14,7 @@
         <h1><div style="text-align: left;">Iris AI</div><div style="text-align: center; color: red;" id="countdown"> temps restant :</div></h1>
     </header>
 	
-	<div id="1.1" class="hidden"> 
+	<div id="dialog1" class="hidden"> 
 		<p>Bravo!</p>
 	</div>
     <script>
@@ -54,7 +54,7 @@
                 
                 // Boucle pour afficher ou masquer les indices
                 indices.forEach((item, index) => {
-                    const element = document.getElementById(`indice${index + 1}`);
+                    const element = document.getElementById(`dialog${index + 1}`);
                     if (item.visible === "TRUE") {
                         element.classList.remove("hidden");
                     } else {
