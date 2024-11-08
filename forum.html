@@ -51,6 +51,9 @@
             try {
                 const response = await fetch(API_URL);
                 const indices = await response.json();
+				
+				// Affiche le nombre d'items retournés pour le débogage
+				console.log("Nombre d'items retournés :", indices.length);
                 
                 // Boucle pour afficher ou masquer les indices
                 indices.forEach((item, index) => {
