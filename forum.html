@@ -44,7 +44,7 @@
     </script>	
 	<script>
 	// URL de l'API Google Apps Script
-        const API_URL = "https://script.google.com/macros/s/AKfycbwJAHBDXFUHPCB8lcQFSRaq1y6QP-EBEvMPlmc5c0DUyA5rT7FZnx-PrSIX0yxUBeA4oA/exec"; 
+        const API_URL = "https://script.google.com/macros/s/AKfycbzoatm5HMEk0RcTxa3u_c5sqRtx5pguePeZnlkJBrXfyW1lW2zLnv0OTDferoAZmR2shA/exec"; 
 
         // Fonction pour mettre à jour l'affichage des indices
         async function updateIndices() {
@@ -57,7 +57,7 @@
                 
                 // Boucle pour afficher ou masquer les indices
                 indices.forEach((item, index) => {
-                    const element = document.getElementById(`dialog${index + 1}`);
+                    const element = document.getElementById(`dialog1${index + 1}`);
                     if (item.visible === "TRUE") {
                         element.classList.remove("hidden");
                     } else {
