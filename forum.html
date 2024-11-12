@@ -44,33 +44,27 @@
     </script>	
 	<script>
 	// URL de l'API Google Apps Script
-        const API_URL = "https://cors-anywhere.herokuapp.com/https://script.google.com/macros/s/AKfycbzoatm5HMEk0RcTxa3u_c5sqRtx5pguePeZnlkJBrXfyW1lW2zLnv0OTDferoAZmR2shA/exec"; 
+        const API_URL = "https://script.google.com/macros/s/AKfycbzoatm5HMEk0RcTxa3u_c5sqRtx5pguePeZnlkJBrXfyW1lW2zLnv0OTDferoAZmR2shA/exec"; 
 
         // Fonction pour mettre à jour l'affichage des indices
         async function updateIndices() {
-            try {
-                const response = await fetch(API_URL);
-                const indices = await response.json();
-				
-				// Affiche le nombre d'items retournés pour le débogage
-				console.log("Nombre d'items retournés :", indices.length);
-                
-                // Boucle pour afficher ou masquer les indices
-                indices.forEach((item, index) => {
-                    const element = document.getElementById(`dialog1${index + 1}`);
-                    if (item.visible === "TRUE") {
-                        element.classList.remove("hidden");
-                    } else {
-                        element.classList.add("hidden");
-                    }
-                });
-            } catch (error) {
-                console.error("Erreur lors de la récupération des indices :", error);
-            }
-        }
-
-        // Actualiser les indices toutes les 5 secondes
-        setInterval(updateIndices, 5000);
+		try {
+			const response = await fetch(API_URL, { mode: 'no-cors' });
+			const indices = await response.json();
+			
+			indices.forEach((item, index) => {
+				const element = document.getElementById(`dialog1${index + 1}`);
+				if (item.visible === "TRUE") {
+					element.classList.remove("hidden");
+				} else {
+					element.classList.add("hidden");
+				}
+				});
+			} 
+			catch (error) {
+				console.error("Erreur lors de la récupération des indices :", error);
+			}
+		}
     </script>
 
 </body>
